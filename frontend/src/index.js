@@ -9,6 +9,8 @@ import AboutPage from "./landing_page/about/AboutPage";
 import ProductPage from "./landing_page/products/ProductsPage";
 import PricingPage from "./landing_page/pricing/PricingPage";
 import SupportPage from "./landing_page/support/SupportPage";
+import Login from "./landing_page/Login";
+import DashboardEmbed from "./landing_page/DashboardEmbed";
 
 import NotFound from "./landing_page/NotFound";
 import Navbar from "./landing_page/Navbar";
@@ -20,6 +22,8 @@ root.render(
     <Navbar />
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/dashboard" element={<DashboardEmbed />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/product" element={<ProductPage />} />

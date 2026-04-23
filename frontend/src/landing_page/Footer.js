@@ -1,69 +1,82 @@
 import React from "react";
 
+const VantageLogoFooter = () => (
+  <svg viewBox="0 0 160 44" xmlns="http://www.w3.org/2000/svg" style={{ height: 44, width: "auto" }}>
+    <defs>
+      <linearGradient id="ftLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#2563eb" />
+        <stop offset="100%" stopColor="#60a5fa" />
+      </linearGradient>
+    </defs>
+    <polygon points="4,7 16,7 22,28 28,7 40,7 22,40" fill="url(#ftLogoGrad)" />
+    <text x="48" y="31" fill="#f0f6ff" fontSize="22" fontFamily="'Inter','Segoe UI',sans-serif" fontWeight="800" letterSpacing="-0.5">VANTAGE</text>
+  </svg>
+);
+
 function Footer() {
   return (
-    <footer style={{ backgroundColor: "rgb(250, 250, 250)" }}>
-      <div className="container border-top mt-5">
+    <footer style={{ backgroundColor: "#050a14", borderTop: "1px solid rgba(59, 130, 246, 0.2)", marginTop: "60px" }}>
+      <div className="container mt-5">
         <div className="row mt-5">
           <div className="col">
-            <img src="media/images/logo.svg" style={{ width: "50%" }} />
-            <p>
-              &copy; 2010 - 2024, Not Zerodha Broking Ltd. All rights reserved.
+            <VantageLogoFooter />
+            <p style={{ color: "#94a3b8", fontSize: "14px", marginTop: "1rem" }}>
+              &copy; 2010 - 2024, Not Vantage Broking Ltd. All rights reserved.
             </p>
           </div>
-          <div className="col">
-            <p>Company</p>
-            <a href="">About</a>
+          <div className="col footer-links">
+            <p style={{ color: "#f0f6ff", fontWeight: 600 }}>Company</p>
+            <a href="/about">About</a>
             <br />
-            <a href="">Products</a>
+            <a href="/product">Products</a>
             <br />
-            <a href="">Pricing</a>
+            <a href="/pricing">Pricing</a>
             <br />
-            <a href="">Referral programme</a>
+            <a href="/support">Referral programme</a>
             <br />
-            <a href="">Careers</a>
+            <a href="/support">Careers</a>
             <br />
-            <a href="">Zerodha.tech</a>
+            <a href="/product">Vantage.tech</a>
             <br />
-            <a href="">Press & media</a>
+            <a href="/support">Press & media</a>
             <br />
-            <a href="">Zerodha cares (CSR)</a>
-            <br />
-          </div>
-          <div className="col">
-            <p>Support</p>
-            <a href="">Contact</a>
-            <br />
-            <a href="">Support portal</a>
-            <br />
-            <a href="">Z-Connect blog</a>
-            <br />
-            <a href="">List of charges</a>
-            <br />
-            <a href="">Downloads & resources</a>
+            <a href="/support">Vantage cares (CSR)</a>
             <br />
           </div>
-          <div className="col">
-            <p>Account</p>
-            <a href="">Open an account</a>
+          <div className="col footer-links">
+            <p style={{ color: "#f0f6ff", fontWeight: 600 }}>Support</p>
+            <a href="/support">Contact</a>
             <br />
-            <a href="">Fund transfer</a>
+            <a href="/support">Support portal</a>
             <br />
-            <a href="">60 day challenge</a>
+            <a href="/support">Z-Connect blog</a>
+            <br />
+            <a href="/support">List of charges</a>
+            <br />
+            <a href="/support">Downloads & resources</a>
+            <br />
+          </div>
+          <div className="col footer-links">
+            <p style={{ color: "#f0f6ff", fontWeight: 600 }}>Account</p>
+            <a href="/signup">Open an account</a>
+            <br />
+            <a href="/support">Fund transfer</a>
+            <br />
+            <a href="/support">60 day challenge</a>
             <br />
           </div>
         </div>
-        <div className="mt-5 text-muted" style={{ fontSize: "14px" }}>
+        <div className="mt-5 text-muted" style={{ fontSize: "12px", color: "rgba(148, 163, 184, 0.6) !important" }}>
           <p>
-            Zerodha Broking Ltd.: Member of NSE​ &​ BSE – SEBI Registration no.:
-            INZ000031633 CDSL: Depository services through Zerodha Securities
+            Vantage Broking Ltd.: Member of NSE​ &​ BSE – SEBI Registration no.:
+            INZ000031633 CDSL: Depository services through Vantage Securities
             Pvt. Ltd. – SEBI Registration no.: IN-DP-100-2015 Commodity Trading
-            through Zerodha Commodities Pvt. Ltd. MCX: 46025 – SEBI Registration
-            no.: INZ000038238 Registered Address: Zerodha Broking Ltd.,
+            through Vantage Commodities Pvt. Ltd. MCX: 46025 – SEBI Registration
+            no.: INZ000038238 Registered Address: Vantage Broking Ltd.,
             #153/154, 4th Cross, Dollars Colony, Opp. Clarence Public School,
             J.P Nagar 4th Phase, Bengaluru - 560078, Karnataka, India. For any
             complaints pertaining to securities broking please write to
-            complaints@zerodha.com, for DP related to dp@zerodha.com. Please
+            complaints@vantage.com, for DP related to dp@vantage.com. Please
             ensure you carefully read the Risk Disclosure Document as prescribed
             by SEBI | ICF
           </p>
@@ -95,7 +108,7 @@ function Footer() {
             of allotment. In case of non allotment the funds will remain in your
             bank account. As a business we don't give stock tips, and have not
             authorized anyone to trade on behalf of others. If you find anyone
-            claiming to be part of Zerodha and offering such services, please
+            claiming to be part of Vantage and offering such services, please
             create a ticket here.
           </p>
         </div>

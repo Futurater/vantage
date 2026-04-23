@@ -1,0 +1,29 @@
+name: Trigger Render deploys
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Render deploys via API
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+          BACKEND_SERVICE_ID: ${{ secrets.RENDER_SERVICE_ID_BACKEND }}
+          DASHBOARD_SERVICE_ID: ${{ secrets.RENDER_SERVICE_ID_DASHBOARD }}
+          FRONTEND_SERVICE_ID: ${{ secrets.RENDER_SERVICE_ID_FRONTEND }}
+          ADVISOR_SERVICE_ID: ${{ secrets.RENDER_SERVICE_ID_ADVISOR }}
+        run: |
+          set -e
+          echo "Triggering deploys for configured Render services..."
+          for id in "$BACKEND_SERVICE_ID" "$DASHBOARD_SERVICE_ID" "$FRONTEND_SERVICE_ID" "$ADVISOR_SERVICE_ID"; do
+            if [ -n "$id" ]; then
+              echo "-> Triggering deploy for $id"
+              curl -s -X POST "https://api.render.com/v1/services/$id/deploys" \
+                -H "Authorization: Bearer $RENDER_API_KEY" \
+                -H "Content-Type: application/json" \
+                -d '{"clearCache":true}' || true
+            fi
+          done

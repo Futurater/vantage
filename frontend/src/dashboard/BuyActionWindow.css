@@ -1,0 +1,278 @@
+/* ===== BUY/SELL ACTION WINDOW — Blue-Black Glassmorphism ===== */
+
+.container {
+  --radius: 24px;
+  width: 42%;
+  height: auto;
+  min-height: 380px;
+  background: rgba(6, 12, 28, 0.88);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  position: absolute;
+  bottom: 0;
+  left: 32%;
+  cursor: move;
+  box-sizing: border-box;
+  z-index: 100;
+  border-radius: var(--radius) var(--radius) 0 0;
+  border: 1px solid rgba(59, 130, 246, 0.22);
+  border-bottom: none;
+  box-shadow: 0 -12px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(59,130,246,0.08) inset;
+}
+
+.dragging { opacity: 0; }
+
+.container .header {
+  width: 100%;
+  background: linear-gradient(135deg, #1a3a8f 0%, #1d4ed8 60%, #2563eb 100%);
+  box-sizing: border-box;
+  padding: 18px 22px 14px;
+  border-radius: var(--radius) var(--radius) 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.container .header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 60%);
+}
+
+.header h3 {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+  position: relative;
+}
+
+.header h3 span {
+  font-size: 0.65rem;
+  font-weight: 400;
+  opacity: 0.75;
+  background: rgba(255,255,255,0.15);
+  padding: 2px 8px;
+  border-radius: 9999px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.market-options {
+  font-weight: 400;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.8rem;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  position: relative;
+}
+
+.market-options label,
+.order-validity label input,
+.sub-order-type label,
+.sub-order-type label input,
+.stop-loss-type label,
+.stop-loss-type label input {
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.market-options input[type="radio"] {
+  accent-color: #60a5fa;
+  cursor: pointer;
+}
+
+/* TABS */
+.tab {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(8, 15, 35, 0.6);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.18);
+  display: flex;
+}
+
+.tab button {
+  border: none;
+  padding: 13px 20px;
+  background: transparent;
+  color: rgba(148, 163, 184, 0.85);
+  font-weight: 500;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  letter-spacing: 0.02em;
+}
+
+.tab button:hover { color: #60a5fa; background: rgba(37,99,235,0.06); }
+
+.tab button::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  border-radius: 9999px;
+  background: #3b82f6;
+  transition: width 0.2s ease;
+}
+
+.tab button:hover::after { width: 60%; }
+
+/* REGULAR ORDER */
+.regular-order {
+  padding: 20px 24px 28px;
+  background: transparent;
+}
+
+.regular-order label {
+  font-size: 0.8rem;
+  color: rgba(148, 163, 184, 0.85);
+  cursor: pointer;
+}
+
+.order-validity {
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.order-validity label span { color: rgba(78, 97, 128, 0.8); }
+
+/* INPUTS */
+.inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  gap: 10px;
+}
+
+.inputs fieldset {
+  max-width: 130px;
+  box-sizing: border-box;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 14px;
+  background: rgba(15, 28, 58, 0.6);
+  transition: all 0.2s ease;
+}
+
+.inputs fieldset:focus-within {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
+}
+
+.inputs fieldset legend {
+  margin-left: 10px;
+  font-size: 0.72rem;
+  padding: 0 6px;
+  color: rgba(148, 163, 184, 0.7);
+  font-weight: 500;
+}
+
+.inputs fieldset:last-of-type legend { color: rgba(78, 97, 128, 0.6); }
+
+.inputs fieldset input {
+  border: none;
+  background: transparent;
+  color: #f0f6ff;
+  max-width: 130px;
+  min-height: 36px;
+  padding: 0 12px;
+  box-sizing: border-box;
+  font-size: 1.05rem;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+}
+
+.inputs fieldset input:focus { outline: none; }
+.inputs fieldset input:disabled { cursor: not-allowed; color: rgba(148,163,184,0.4); }
+
+/* OPTIONS ROW */
+.options {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.options span {
+  color: #60a5fa;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+.options span:hover {
+  background: rgba(59,130,246,0.12);
+  color: #93c5fd;
+}
+
+/* BUTTONS ROW */
+.buttons {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px 4px;
+  border-top: 1px solid rgba(59,130,246,0.1);
+  margin-top: 8px;
+}
+
+.buttons span {
+  font-size: 0.78rem;
+  color: rgba(148, 163, 184, 0.75);
+}
+
+/* BTN inside BuyWindow */
+.btn {
+  text-decoration: none;
+  padding: 9px 22px;
+  border-radius: 9999px;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
+  letter-spacing: 0.02em;
+}
+
+.btn-grey {
+  background: rgba(255,255,255,0.07);
+  color: rgba(148, 163, 184, 0.9);
+  border: 1px solid rgba(59,130,246,0.15) !important;
+}
+
+.btn-grey:hover {
+  background: rgba(255,255,255,0.13);
+  color: #f0f6ff;
+  border-color: rgba(59,130,246,0.3) !important;
+}
+
+.btn-blue {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  box-shadow: 0 4px 20px rgba(37,99,235,0.4);
+}
+
+.btn-blue:hover {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  box-shadow: 0 6px 28px rgba(37,99,235,0.55);
+  transform: translateY(-1px);
+}
