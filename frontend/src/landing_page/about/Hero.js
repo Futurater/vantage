@@ -17,20 +17,19 @@ function Hero() {
       >
         <div className="col-6 p-5">
           <p>
-            We kick-started operations on the 15th of August, 2010 with the goal
-            of breaking all barriers that traders and investors face in India in
-            terms of cost, support, and technology. We named the company
-            Vantage, a combination of Zero and "Rodha", the Sanskrit word for
-            barrier.
+            We launched Vantage in 2024 with a single mission: remove every
+            barrier that stands between an Indian investor and the markets.
+            Whether it is cost, complexity, or lack of guidance — we are here
+            to change that.
           </p>
           <p>
-            Today, our disruptive pricing models and in-house technology have
-            made us the biggest stock broker in India.
+            Today, our AI-first platform and transparent pricing model are
+            redefining what a trading experience should look like in India.
           </p>
           <p>
-            Over 1+ Crore clients place millions of orders every day through our
-            powerful ecosystem of investment platforms, contributing over 15% of
-            all Indian retail trading volumes.
+            Thousands of investors trust Vantage to manage their portfolios,
+            execute trades at lightning speed, and get intelligent insights
+            powered by Gemini AI.
           </p>
         </div>
         <div className="col-6 p-5">

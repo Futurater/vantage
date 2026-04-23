@@ -15,23 +15,36 @@ import DashboardEmbed from "./landing_page/DashboardEmbed";
 import NotFound from "./landing_page/NotFound";
 import Navbar from "./landing_page/Navbar";
 import Footer from "./landing_page/Footer";
+import { useLocation } from "react-router-dom";
 
+function AppShell() {
+  const location = useLocation();
+  const isFullscreen = location.pathname.startsWith("/dashboard");
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+      {!isFullscreen && <Navbar />}
+      <main style={{ flex: 1 }}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<DashboardEmbed />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/product" element={<ProductPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/support" element={<SupportPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+      {!isFullscreen && <Footer />}
+    </div>
+  );
+}
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter><div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
-    <Navbar />
-    <main style={{ flex: 1, display: "flex", flexDirection: "column", width: "100%" }}><Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/dashboard" element={<DashboardEmbed />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/about" element={<AboutPage />} />
-      <Route path="/product" element={<ProductPage />} />
-      <Route path="/pricing" element={<PricingPage />} />
-      <Route path="/support" element={<SupportPage />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes></main>
-    <Footer />
-  </div></BrowserRouter>
+  <BrowserRouter>
+    <AppShell />
+  </BrowserRouter>
 );
 
