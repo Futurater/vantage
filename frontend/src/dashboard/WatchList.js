@@ -7,7 +7,7 @@ import {
   KeyboardArrowUp,
   MoreHoriz,
 } from "@mui/icons-material";
-import { watchlist as initialWatchlist } from "../../dashboard_data/data";
+import { watchlist as initialWatchlist } from "../dashboard_data/data";
 import { DoughnutChart } from "../dashboard/DoughnoutChart";
 import AIAdvisorPanel from "../dashboard/AIAdvisorPanel";
 

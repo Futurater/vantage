@@ -1,6 +1,6 @@
 import React from "react";
 
-import { positions } from "../../dashboard_data/data";
+import { positions } from "../dashboard_data/data";
 
 const Positions = () => {
   return (
