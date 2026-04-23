@@ -99,7 +99,8 @@ const Login = () => {
 
 const styles = {
   container: {
-    minHeight: '80vh',
+    height: '100vh',
+    width: '100vw',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',

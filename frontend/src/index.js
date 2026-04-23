@@ -18,9 +18,9 @@ import Footer from "./landing_page/Footer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
+  <BrowserRouter><div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
     <Navbar />
-    <Routes>
+    <main style={{ flex: 1, display: "flex", flexDirection: "column", width: "100%" }}><Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/dashboard" element={<DashboardEmbed />} />
@@ -30,7 +30,8 @@ root.render(
       <Route path="/pricing" element={<PricingPage />} />
       <Route path="/support" element={<SupportPage />} />
       <Route path="*" element={<NotFound />} />
-    </Routes>
+    </Routes></main>
     <Footer />
-  </BrowserRouter>
+  </div></BrowserRouter>
 );
+
