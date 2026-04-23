@@ -1,10 +1,10 @@
 services:
   - type: web
     name: vantage-backend
-    env: node
+    runtime: node
     plan: free
     region: oregon
-    root: backend
+    rootDir: backend
     buildCommand: "npm install"
     startCommand: "node index.js"
     envVars:
@@ -17,10 +17,10 @@ services:
 
   - type: web
     name: vantage-frontend
-    env: static
-    root: frontend
+    runtime: static
+    rootDir: frontend
     buildCommand: "npm install && npm run build"
-    publishPath: build
+    staticPublishPath: build
     envVars:
       - key: REACT_APP_API_URL
         sync: false
