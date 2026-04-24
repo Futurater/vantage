@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const VantageLogoFooter = () => (
-  <svg viewBox="0 0 160 44" xmlns="http://www.w3.org/2000/svg" style={{ height: 44, width: "auto" }}>
+  <svg viewBox="0 0 160 44" xmlns="http://www.w3.org/2000/svg" style={{ height: 40, width: "auto" }}>
     <defs>
       <linearGradient id="ftLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
         <stop offset="0%" stopColor="#2563eb" />
@@ -13,103 +14,142 @@ const VantageLogoFooter = () => (
   </svg>
 );
 
+const s = {
+  footer: {
+    backgroundColor: "#050a14",
+    borderTop: "1px solid rgba(59, 130, 246, 0.2)",
+    padding: "60px 0 0",
+    marginTop: "auto",
+  },
+  inner: {
+    maxWidth: 1200,
+    margin: "0 auto",
+    padding: "0 24px",
+  },
+  grid: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "40px",
+    justifyContent: "space-between",
+    paddingBottom: "40px",
+  },
+  brand: {
+    flex: "1 1 200px",
+    minWidth: 160,
+  },
+  col: {
+    flex: "1 1 120px",
+    minWidth: 120,
+  },
+  colHead: {
+    color: "#f0f6ff",
+    fontWeight: 600,
+    fontSize: "0.9rem",
+    marginBottom: "14px",
+    display: "block",
+  },
+  link: {
+    display: "block",
+    color: "#94a3b8",
+    textDecoration: "none",
+    fontSize: "0.85rem",
+    marginBottom: "10px",
+    transition: "color 0.2s",
+  },
+  tagline: {
+    color: "#94a3b8",
+    fontSize: "0.82rem",
+    marginTop: "12px",
+    lineHeight: 1.6,
+  },
+  legal: {
+    borderTop: "1px solid rgba(59, 130, 246, 0.12)",
+    padding: "24px 0",
+    marginTop: "8px",
+  },
+  legalText: {
+    color: "rgba(148, 163, 184, 0.55)",
+    fontSize: "0.72rem",
+    lineHeight: 1.7,
+    marginBottom: "10px",
+  },
+};
+
+const linkStyle = (hovered) => ({
+  ...s.link,
+  color: hovered ? "#60a5fa" : "#94a3b8",
+});
+
+function FooterLink({ to, children }) {
+  const [hov, setHov] = React.useState(false);
+  return (
+    <Link
+      to={to}
+      style={linkStyle(hov)}
+      onMouseEnter={() => setHov(true)}
+      onMouseLeave={() => setHov(false)}
+    >
+      {children}
+    </Link>
+  );
+}
+
 function Footer() {
   return (
-    <footer style={{ backgroundColor: "#050a14", borderTop: "1px solid rgba(59, 130, 246, 0.2)", marginTop: "60px" }}>
-      <div className="container mt-5">
-        <div className="row mt-5">
-          <div className="col">
+    <footer style={s.footer}>
+      <div style={s.inner}>
+        <div style={s.grid}>
+          {/* Brand */}
+          <div style={s.brand}>
             <VantageLogoFooter />
-            <p style={{ color: "#94a3b8", fontSize: "14px", marginTop: "1rem" }}>
-              &copy; 2010 - 2024, Not Vantage Broking Ltd. All rights reserved.
+            <p style={s.tagline}>
+              © 2010 – 2024, Vantage Broking Ltd.<br />
+              All rights reserved.
             </p>
           </div>
-          <div className="col footer-links">
-            <p style={{ color: "#f0f6ff", fontWeight: 600 }}>Company</p>
-            <a href="/about">About</a>
-            <br />
-            <a href="/product">Products</a>
-            <br />
-            <a href="/pricing">Pricing</a>
-            <br />
-            <a href="/support">Referral programme</a>
-            <br />
-            <a href="/support">Careers</a>
-            <br />
-            <a href="/product">Vantage.tech</a>
-            <br />
-            <a href="/support">Press & media</a>
-            <br />
-            <a href="/support">Vantage cares (CSR)</a>
-            <br />
+
+          {/* Company */}
+          <div style={s.col}>
+            <span style={s.colHead}>Company</span>
+            <FooterLink to="/about">About</FooterLink>
+            <FooterLink to="/product">Products</FooterLink>
+            <FooterLink to="/pricing">Pricing</FooterLink>
+            <FooterLink to="/support">Referral programme</FooterLink>
+            <FooterLink to="/support">Careers</FooterLink>
+            <FooterLink to="/product">Vantage.tech</FooterLink>
+            <FooterLink to="/support">Press &amp; media</FooterLink>
+            <FooterLink to="/support">Vantage cares (CSR)</FooterLink>
           </div>
-          <div className="col footer-links">
-            <p style={{ color: "#f0f6ff", fontWeight: 600 }}>Support</p>
-            <a href="/support">Contact</a>
-            <br />
-            <a href="/support">Support portal</a>
-            <br />
-            <a href="/support">Z-Connect blog</a>
-            <br />
-            <a href="/support">List of charges</a>
-            <br />
-            <a href="/support">Downloads & resources</a>
-            <br />
+
+          {/* Support */}
+          <div style={s.col}>
+            <span style={s.colHead}>Support</span>
+            <FooterLink to="/support">Contact</FooterLink>
+            <FooterLink to="/support">Support portal</FooterLink>
+            <FooterLink to="/support">Z-Connect blog</FooterLink>
+            <FooterLink to="/support">List of charges</FooterLink>
+            <FooterLink to="/support">Downloads &amp; resources</FooterLink>
           </div>
-          <div className="col footer-links">
-            <p style={{ color: "#f0f6ff", fontWeight: 600 }}>Account</p>
-            <a href="/signup">Open an account</a>
-            <br />
-            <a href="/support">Fund transfer</a>
-            <br />
-            <a href="/support">60 day challenge</a>
-            <br />
+
+          {/* Account */}
+          <div style={s.col}>
+            <span style={s.colHead}>Account</span>
+            <FooterLink to="/signup">Open an account</FooterLink>
+            <FooterLink to="/support">Fund transfer</FooterLink>
+            <FooterLink to="/support">60 day challenge</FooterLink>
           </div>
         </div>
-        <div className="mt-5 text-muted" style={{ fontSize: "12px", color: "rgba(148, 163, 184, 0.6) !important" }}>
-          <p>
-            Vantage Broking Ltd.: Member of NSE​ &​ BSE – SEBI Registration no.:
-            INZ000031633 CDSL: Depository services through Vantage Securities
-            Pvt. Ltd. – SEBI Registration no.: IN-DP-100-2015 Commodity Trading
-            through Vantage Commodities Pvt. Ltd. MCX: 46025 – SEBI Registration
-            no.: INZ000038238 Registered Address: Vantage Broking Ltd.,
-            #153/154, 4th Cross, Dollars Colony, Opp. Clarence Public School,
-            J.P Nagar 4th Phase, Bengaluru - 560078, Karnataka, India. For any
-            complaints pertaining to securities broking please write to
-            complaints@vantage.com, for DP related to dp@vantage.com. Please
-            ensure you carefully read the Risk Disclosure Document as prescribed
-            by SEBI | ICF
-          </p>
 
-          <p>
-            Procedure to file a complaint on SEBI SCORES: Register on SCORES
-            portal. Mandatory details for filing complaints on SCORES: Name,
-            PAN, Address, Mobile Number, E-mail ID. Benefits: Effective
-            Communication, Speedy redressal of the grievances
+        {/* Legal */}
+        <div style={s.legal}>
+          <p style={s.legalText}>
+            Vantage Broking Ltd.: Member of NSE &amp; BSE – SEBI Registration no.: INZ000031633 CDSL: Depository services through Vantage Securities Pvt. Ltd. – SEBI Registration no.: IN-DP-100-2015 Commodity Trading through Vantage Commodities Pvt. Ltd. MCX: 46025 – SEBI Registration no.: INZ000038238 Registered Address: Vantage Broking Ltd., #153/154, 4th Cross, Dollars Colony, Opp. Clarence Public School, J.P Nagar 4th Phase, Bengaluru - 560078, Karnataka, India.
           </p>
-
-          <p>
-            Investments in securities market are subject to market risks; read
-            all the related documents carefully before investing.
+          <p style={s.legalText}>
+            Investments in securities market are subject to market risks; read all the related documents carefully before investing.
           </p>
-
-          <p>
-            "Prevent unauthorised transactions in your account. Update your
-            mobile numbers/email IDs with your stock brokers. Receive
-            information of your transactions directly from Exchange on your
-            mobile/email at the end of the day. Issued in the interest of
-            investors. KYC is one time exercise while dealing in securities
-            markets - once KYC is done through a SEBI registered intermediary
-            (broker, DP, Mutual Fund etc.), you need not undergo the same
-            process again when you approach another intermediary." Dear
-            Investor, if you are subscribing to an IPO, there is no need to
-            issue a cheque. Please write the Bank account number and sign the
-            IPO application form to authorize your bank to make payment in case
-            of allotment. In case of non allotment the funds will remain in your
-            bank account. As a business we don't give stock tips, and have not
-            authorized anyone to trade on behalf of others. If you find anyone
-            claiming to be part of Vantage and offering such services, please
-            create a ticket here.
+          <p style={s.legalText}>
+            "Prevent unauthorised transactions in your account. Update your mobile numbers/email IDs with your stock brokers." If you find anyone claiming to be part of Vantage and offering such services, please create a ticket here.
           </p>
         </div>
       </div>
