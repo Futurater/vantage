@@ -42,10 +42,10 @@ const BrokerIllustration = () => (
 
 // Press logos — branded horizontal name strip
 const PressLogos = () => (
-  <svg viewBox="0 0 520 80" xmlns="http://www.w3.org/2000/svg" style={{ width: "90%", borderRadius: 10 }}>
-    <rect width="520" height="80" fill="#f8f9fa" rx="10" />
-    {[["Economic Times", 60], ["Mint", 180], ["Business Standard", 300], ["Forbes India", 420]].map(([name, x]) => (
-      <text key={name} x={x} y="46" fill="#6b7280" fontSize="14" fontFamily="'Inter',sans-serif" fontWeight="700" textAnchor="middle">{name}</text>
+  <svg viewBox="0 0 520 80" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", borderRadius: 12, marginTop: "2rem" }}>
+    <rect width="520" height="80" fill="rgba(15, 23, 42, 0.6)" rx="16" stroke="rgba(59, 130, 246, 0.15)" strokeWidth="1" />
+    {[["Economic Times", 80], ["Mint", 200], ["Business Standard", 330], ["Forbes India", 450]].map(([name, x]) => (
+      <text key={name} x={x} y="45" fill="rgba(148, 163, 184, 0.8)" fontSize="13" fontFamily="'Inter',sans-serif" fontWeight="600" textAnchor="middle" letterSpacing="0.02em">{name}</text>
     ))}
   </svg>
 );
@@ -54,10 +54,10 @@ function Awards() {
   return (
     <div className="container mt-5">
       <div className="row">
-        <div className="col-6 p-5">
+        <div className="col-6 pe-4 py-3">
           <BrokerIllustration />
         </div>
-        <div className="col-6 p-5 mt-5">
+        <div className="col-6 py-3 ps-4">
           <h1>Largest stock broker in India</h1>
           <p className="mb-5">
             2+ million Vantage clients contribute to over 15% of all retail

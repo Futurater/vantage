@@ -9,14 +9,14 @@ import OpenAccount from "../OpenAccount";
 
 function HomePage() {
   return (
-    <>
+    <div style={{ display: "flow-root" }}>
       <Hero />
       <Awards />
       <Stats />
       <Pricing />
       <Education />
       <OpenAccount />
-    </>
+    </div>
   );
 }
 

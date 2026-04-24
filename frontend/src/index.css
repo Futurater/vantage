@@ -807,3 +807,47 @@ hr {
   color: var(--blue-glow);
 }
 
+
+.btn-vantage {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  color: #fff !important;
+  border: none;
+  border-radius: 9999px;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 20px rgba(37,99,235,0.35);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-vantage:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(37,99,235,0.5);
+}
+
+
+.input-vantage {
+  width: 100%;
+  padding: 14px 20px;
+  background: rgba(15, 28, 55, 0.7);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 9999px;
+  color: #f0f6ff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+.input-vantage:focus {
+  border-color: rgba(59, 130, 246, 0.5);
+  background: rgba(20, 40, 80, 0.8);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+.input-vantage::placeholder {
+  color: #94a3b8;
+}
+

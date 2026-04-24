@@ -12,7 +12,7 @@ function Hero() {
           <h1 className="fs-3">
             Search for an answer or browse help topics to create a ticket
           </h1>
-          <input placeholder="Eg. how do I activate F&O" />
+          <input className="input-vantage my-4" placeholder="Eg. how do I activate F&O" />
           <br />
           <a href="">Track account opening</a>
           <a href="">Track segment activation</a>

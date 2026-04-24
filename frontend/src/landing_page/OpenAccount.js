@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function OpenAccount() {
   return (
@@ -9,27 +10,13 @@ function OpenAccount() {
           Modern platforms and apps, ₹0 investments, and flat ₹20 intraday and
           F&O trades.
         </p>
-        <button
-          className="p-2 mb-5"
-          style={{ 
-            width: "25%", 
-            margin: "0 auto",
-            background: "linear-gradient(135deg, #1d4ed8, #2563eb)",
-            color: "#fff",
-            border: "none",
-            borderRadius: "9999px",
-            padding: "16px",
-            fontSize: "1.1rem",
-            fontWeight: "600",
-            boxShadow: "0 4px 20px rgba(37,99,235,0.35)",
-            transition: "all 0.2s ease"
-          }}
-          onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 6px 24px rgba(37,99,235,0.5)"; }}
-          onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(37,99,235,0.35)"; }}
-          onClick={() => window.location.href = '/signup'}
+        <Link
+          className="btn-vantage mb-5"
+          style={{ width: "25%", margin: "0 auto" }}
+          to="/signup"
         >
           Sign up Now
-        </button>
+        </Link>
       </div>
     </div>
   );

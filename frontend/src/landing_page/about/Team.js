@@ -23,33 +23,32 @@ function Team() {
   return (
     <div className="container">
       <div className="row p-3 mt-5 border-top">
-        <h1 className="text-center">People</h1>
+        <h1 className="text-center">About Me</h1>
       </div>
 
       <div
-        className="row p-3 text-muted"
-        style={{ lineHeight: "1.8", fontSize: "1.2em" }}
+        className="row p-3"
+        style={{ lineHeight: "1.8", fontSize: "1.2em", color: "#cbd5e1" }}
       >
         <div className="col-6 p-3 text-center">
           <FounderAvatar />
-          <h4 className="mt-5">CA Sagar Varma</h4>
-          <h6>Founder, CEO</h6>
+          <h4 className="mt-5">Sagar Varma</h4>
+          <h6>Full Stack MERN Developer</h6>
         </div>
         <div className="col-6 p-3">
           <p>
-            Sagar founded Vantage in 2024 with a vision to democratize investing
-            in India through transparent, low-cost, and technology-first trading
-            infrastructure.
+            Hi, I'm Sagar. I am a student at Sir MVIT and a passionate Full Stack Developer 
+            with expertise in the MERN stack (MongoDB, Express, React, Node.js). 
+            I created this platform as a demonstration of blending financial
+            tools with modern web technologies.
           </p>
           <p>
-            A Chartered Accountant by training, Sagar brings deep financial
-            acumen and a builder's mindset to disrupting the traditional broking
-            space. He is passionate about making capital markets accessible to
-            every Indian investor.
+            My goal is to continuously build innovative applications that solve
+            real-world problems and provide an intuitive user experience.
           </p>
           <p>
-            Outside of markets, Sagar is an avid reader and tech enthusiast who
-            believes the next decade belongs to retail investors.
+            Outside of coding, I am an enthusiastic learner who
+            believes the future belongs to those who build it.
           </p>
           <p>
             Connect on{" "}

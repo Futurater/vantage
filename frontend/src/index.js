@@ -22,9 +22,9 @@ function AppShell() {
   const isFullscreen = location.pathname.startsWith("/dashboard");
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+    <>
       {!isFullscreen && <Navbar />}
-      <main style={{ flex: 1, paddingTop: "1px" }}>
+      <main style={{ paddingTop: "1px" }}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
@@ -38,7 +38,7 @@ function AppShell() {
         </Routes>
       </main>
       {!isFullscreen && <Footer />}
-    </div>
+    </>
   );
 }
 const root = ReactDOM.createRoot(document.getElementById("root"));

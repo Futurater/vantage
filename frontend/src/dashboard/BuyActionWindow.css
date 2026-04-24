@@ -1,6 +1,6 @@
 /* ===== BUY/SELL ACTION WINDOW — Blue-Black Glassmorphism ===== */
 
-.container {
+.buy-window-container {
   --radius: 24px;
   width: 42%;
   height: auto;
@@ -22,7 +22,7 @@
 
 .dragging { opacity: 0; }
 
-.container .header {
+.buy-window-container .header {
   width: 100%;
   background: linear-gradient(135deg, #1a3a8f 0%, #1d4ed8 60%, #2563eb 100%);
   box-sizing: border-box;
@@ -32,7 +32,7 @@
   overflow: hidden;
 }
 
-.container .header::before {
+.buy-window-container .header::before {
   content: '';
   position: absolute;
   inset: 0;

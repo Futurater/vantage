@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Inline SVG: Trading Platform Hero — chart lines on dark gradient
 const HeroIllustration = () => (
@@ -61,12 +62,13 @@ function Hero() {
           Online platform to invest in stocks, derivatives, mutual funds, and
           more
         </p>
-        <button
-          className="p-2 btn btn-primary fs-5 mb-5"
+        <Link
+          className="btn-vantage fs-5 mb-5"
           style={{ width: "20%", margin: "0 auto" }}
+          to="/signup"
         >
           Signup Now
-        </button>
+        </Link>
       </div>
     </div>
   );
