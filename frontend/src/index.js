@@ -28,7 +28,7 @@ function AppShell() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<DashboardEmbed />} />
+          <Route path="/dashboard/*" element={<DashboardEmbed />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/product" element={<ProductPage />} />
