@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
     try {
       const API = process.env.REACT_APP_API_URL || "http://localhost:3002";
-      const DASHBOARD = process.env.REACT_APP_DASHBOARD_URL || "http://localhost:3000";
 
       const res = await fetch(`${API}/login`, {
         method: "POST",
@@ -27,8 +27,7 @@ const Login = () => {
 
       const body = await res.json();
       localStorage.setItem("token", body.token);
-      // redirect directly to dashboard app and pass token via query
-      window.location.href = `${DASHBOARD}/?token=${body.token}`;
+      navigate("/dashboard");
     } catch (err) {
       setError("Network error");
     }

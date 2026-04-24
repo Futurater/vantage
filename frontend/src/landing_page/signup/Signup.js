@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -6,6 +7,7 @@ const Signup = () => {
     email: '',
     password: ''
   });
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -20,7 +22,6 @@ const Signup = () => {
     setError(null);
     try {
       const API = process.env.REACT_APP_API_URL || "http://localhost:3002";
-      const DASHBOARD = process.env.REACT_APP_DASHBOARD_URL || "http://localhost:3000";
 
       const res = await fetch(`${API}/register`, {
         method: 'POST',
@@ -36,8 +37,7 @@ const Signup = () => {
 
       const body = await res.json();
       localStorage.setItem('token', body.token);
-      // redirect directly to dashboard app with token
-      window.location.href = `${DASHBOARD}/?token=${body.token}`;
+      navigate('/dashboard');
     } catch (err) {
       setError('Network error');
     }
